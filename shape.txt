@@ -1,0 +1,301 @@
+========== SHAPE ==========
+(2811774, 7)
+
+========== COLUMNS ==========
+['tweet_id', 'author_id', 'inbound', 'created_at', 'text', 'response_tweet_id', 'in_response_to_tweet_id']
+
+========== FIRST 5 ROWS ==========
+   tweet_id   author_id  inbound  ...                                               text response_tweet_id in_response_to_tweet_id
+0         1  sprintcare    False  ...  @115712 I understand. I would like to assist y...                 2                     3.0
+1         2      115712     True  ...      @sprintcare and how do you propose we do that               NaN                     1.0
+2         3      115712     True  ...  @sprintcare I have sent several private messag...                 1                     4.0
+3         4  sprintcare    False  ...  @115712 Please send us a Private Message so th...                 3                     5.0
+4         5      115712     True  ...                                 @sprintcare I did.                 4                     6.0
+
+[5 rows x 7 columns]
+
+========== DATA TYPES ==========
+tweet_id                     int64
+author_id                      str
+inbound                       bool
+created_at                     str
+text                           str
+response_tweet_id              str
+in_response_to_tweet_id    float64
+dtype: object
+
+========== MISSING VALUES ==========
+tweet_id                         0
+author_id                        0
+inbound                          0
+created_at                       0
+text                             0
+response_tweet_id          1040629
+in_response_to_tweet_id     794335
+dtype: int64
+
+
+======= TOP AUTHORS ==========
+ author_id
+ AmazonHelp         169840# AppleSupport       106860
+ Uber_Support        5620
+ SpotifyCares        4365
+ Delta               42253
+ Tesco               38573
+ AmericanAir         36764
+ TMobileHelp         34317
+ comcastcares        33031
+ British_Airways     29361
+ SouthwestAir        28977
+ VirginTrains        27817
+ Ask_Spectrum        25860
+ XboxSupport         24557
+ sprintcare          22381
+ hulu_support        21872
+ sainsburys          19466
+ GWRHelp             19364
+ AskPlayStation      19098
+ ChipotleTweets      18749
+ VerizonSupport      17966
+ UPSHelp             17817
+ ATVIAssist          17650
+ O2                  16212
+ Safaricom_Care      16077
+ idea_cares          15724
+ AskTarget           13218
+ AirAsiaSupport      12829
+ BofA_Help           12683
+ SW_Help             12231
+ ArgosHelpers        12174
+ AskLyft             11809
+ marksandspencer     11504
+ AskAmex             11358
+ MicrosoftHelps      11304
+ AskPayPal           11298
+ Morrisons           10126
+ AdobeCare            9917
+ airtel_care          9881
+ AskeBay              9686
+ AirbnbHelp           8875
+ ChaseSupport         8811
+ McDonalds            8478
+ AldiUK               8114
+ JetBlue              8020
+ CoxHelp              7861
+ Ask_WellsFargo       7578
+ AzureSupport         7565
+ AlaskaAir            7478
+ HPSupport            7200
+ Name: count, dtype: int64
+
+
+
+========== SUPPORT ANALYSIS ==========
+
+          brand  brand_tweets  replies_to_customers  redirect_replies  substantive_replies  customer_followups redirect_rate substantive_rate followup_rate
+     AmazonHelp        169840                168814              6731               162083               99890         3.99%           96.01%        59.17%
+   AppleSupport        106860                106646             57294                49352               35596        53.72%           46.28%        33.38%
+          Delta         42253                 42117              6969                35148               14071        16.55%           83.45%        33.41%
+   Uber_Support         56270                 56160             23717                32443               21948        42.23%           57.77%        39.08%
+    AmericanAir         36764                 36531              6186                30345               17702        16.93%           83.07%        48.46%
+   SpotifyCares         43265                 43092             13300                29792               14971        30.86%           69.14%        34.74%
+British_Airways         29361                 29290              4285                25005               12278        14.63%           85.37%        41.92%
+    XboxSupport         24557                 23235              5007                18228               10835        21.55%           78.45%        46.63%
+   comcastcares         33031                 32921             23583                 9338                8739        71.64%           28.36%        26.55%
+    airtel_care          9881                  9414              1809                 7605                2836        19.22%           80.78%        30.13%
+    TMobileHelp         34317                 34215             28044                 6171               11588        81.96%           18.04%        33.87%
+
+Saved to data/brand_analysis.csv
+
+
+========== FINAL BRAND COMPARISON ==========
+
+      brand  unique_threads  avg_brand_replies_per_thread  multi_turn_thread_rate  actionable_reply_rate
+ AmazonHelp           82534                          2.05                   49.26                  39.72
+      Delta           26166                          1.61                   33.29                  34.24
+XboxSupport           13454                          1.81                   41.87                  42.71
+
+
+
+========== AMAZONHELP LANGUAGE DISTRIBUTION ==========
+
+          tweets  percentage
+language                    
+en          7827       78.27
+ja           561        5.61
+es           531        5.31
+fr           456        4.56
+de           296        2.96
+pt           196        1.96
+it            78        0.78
+af            10        0.10
+tr             4        0.04
+hr             4        0.04
+vi             4        0.04
+cs             3        0.03
+ca             3        0.03
+no             3        0.03
+so             3        0.03
+nl             2        0.02
+id             2        0.02
+sw             2        0.02
+tl             2        0.02
+sl             2        0.02
+ro             2        0.02
+unknown        1        0.01
+et             1        0.01
+fi             1        0.01
+sv             1        0.01
+cy             1        0.01
+lv             1        0.01
+sk             1        0.01
+da             1        0.01
+lt             1        0.01
+
+========== XBOXSUPPORT CUSTOMER LANGUAGE DISTRIBUTION ==========
+
+Empty DataFrame
+Columns: [tweets, percentage]
+Index: []
+
+========== XBOXSUPPORT INBOUND VALUES ==========
+
+inbound
+False    24557
+Name: count, dtype: int64
+
+========== SAMPLE XBOXSUPPORT TWEETS ==========
+
+ inbound                                                                                                                                                                                                                                                                                      text
+   False @115771 Hi, you can change your Microsoft account email through the steps here: https://t.co/DkEhOHbOYy . If the email your son wants to change to is already associated with a Microsoft account, you'll need to follow those steps to switch the email address on that account too. ^ZM
+   False                                                                                                                                                                                          @115785 Hi there! We'd recommend reaching out to the chat team here: https://t.co/UrUi80i54l ^JA
+   False                                                                                                                                                                       @115785 We'd recommend keeping an eye out on your email that is associated with your account for further info.  ^JA
+   False                                                                                                                                            @115785 @115786 Did you pre-order this console via the Microsoft store? If so, then let's have you reach out here: https://t.co/jY7fDjTzLd ^JA
+   False                                                                                                                                                                            @115789 Hello! Would you mind following us and sending a DM with your gamertag and the code you redeemed?  ^RR
+   False                                                                                                                                                                                                                             @115791 Can you show us what is appearing on your screen? ^RM
+   False                                                                                                                                                                                                @116039 Hi, can you direct message us and explain what issue you need assistance with? ^RM
+   False                                                                                                                                                                    @116040 Hello! Most of the time connecting via ethernet can help, or restarting the console, router, and download. ^CO
+   False                                                                                                                                                   @116040 Canceling the download, powering down the console, unplugging for five full minutes (this clears the cache), and try again. ^CO
+   False                                                                                                                                                                                                       @116041 to express your interest in seeing those games added to back compat!  2 ^JS
+
+========== XBOXSUPPORT CUSTOMER LANGUAGE DISTRIBUTION ==========
+
+          tweets  percentage
+language                    
+en          9426       94.26
+fr           305        3.05
+es            53        0.53
+it            46        0.46
+no            42        0.42
+pt            22        0.22
+de            21        0.21
+ca            20        0.20
+af            20        0.20
+nl             7        0.07
+pl             6        0.06
+sv             6        0.06
+ro             4        0.04
+sk             4        0.04
+ar             3        0.03
+hr             3        0.03
+da             2        0.02
+so             2        0.02
+et             1        0.01
+cy             1        0.01
+unknown        1        0.01
+tr             1        0.01
+hu             1        0.01
+sq             1        0.01
+vi             1        0.01
+sl             1        0.01
+
+========== AmazonHelp ==========
+Customer messages: 154976
+English messages:  112437
+English %:        72.55%
+
+========== XboxSupport ==========
+Customer messages: 20213
+English messages:  19065
+English %:        94.32%
+
+========== COMPARISON ==========
+
+AmazonHelp English:  112437
+XboxSupport English: 19065
+
+========== XBOXSUPPORT ENGLISH CUSTOMER MESSAGES ==========
+
+Total: 19059
+
+========== KEYWORD COVERAGE ==========
+
+/home/rahul-ringane/Projects/Support_Agent/src/xbox_intent_analysis.py:61: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  count = customers["text"].str.contains(
+account                1377 ( 7.22%)
+purchase/payment       1292 ( 6.78%)
+game                   3284 (17.23%)
+console                6265 (32.87%)
+controller              594 ( 3.12%)
+network                 941 ( 4.94%)
+download/install       1764 ( 9.26%)
+subscription            664 ( 3.48%)
+order/shipping          287 ( 1.51%)
+error/problem          3138 (16.46%)
+
+
+
+========== RANDOM CUSTOMER EXAMPLES ==========
+
+1. @XboxSupport Please fix this ASAP this literally pisses me the fuck off since I can’t already talk and now I’m banned again and can’t play online
+2. @XboxSupport Waste my time asked as you don't have a clue what I ask
+3. @XboxSupport And harmonix have said that my save file has messed up.
+4. @XboxSupport it’s saying my network settings are blocking party chat?
+5. I think also, I might have found the route of this. It was an old Microsoft account associated with my old Xbox 360 Live account that was getting accessed by some IP in another state. All my passwords and securities have been changed, and i'm also putting in my passwords by
+6. @116089 @101624  your game on @115786 @157702 @XboxSupport is like servers disconnected https://t.co/X5xh7TzSXB
+7. @XboxSupport hey I was just wondering. Did you guys change Xbox live party’s at all? They seem to sound different and cut out a lot more often. Me and my friends noticed this about 2 days ago.
+8. @XboxSupport the fractured but whole season pass is not working. Any ideas why
+9. @XboxSupport  my Xbox was bought in Switzerland and now I can no longer make repair request in my country Brazil why?
+10. @XboxSupport is there  something wrong with halo 5 multiplayer? Can select playlists and when I can get network error but it's the same error for everyone in fireteam
+11. @XboxSupport If there is an issue this needs to get out and be known to all so others don’t have this same problem although others probably have already experienced this problem today as I have.
+12. I’m going back to my PS4 @XboxSupport
+13. @XboxSupport Nope. I’m not worried about mine. I’m bringing this guys created emblem to your attention.
+14. @XboxSupport keeps saying syncing data for cod ww2 before my game loads up and it’s saying we couldn’t get your latest game save data
+15. @xboxsupport is The Walking Dead: 400 Days not backwards compatible? I just bought and downloaded it to my Xbox One but it's not showing up in my games list, nor is It launching from the "Recently installed" list
+16. @XboxSupport when I upgraded to one x my @117347 Horizon 360 didn’t migrate, clicking on it takes me to store where it says “this offer not valid in your region”.  Help? @92429 @241132 @682854
+17. hey @XboxSupport  when could I get this as I missed out on the pre order 😭😭😭👎🏻 😩 #XboxHelp #Gamers #NeedforSpeedPayback https://t.co/qMU3pTbRKY
+18. @XboxSupport Hi, I purchased Xbox live 12 month prepaid code and it's been activatedand shows under my subscriptions but I can't access XB live features to play online could you please assist?
+19. @XboxSupport , I recently purchased Xbox One S and I've just found out that Xbox Live Gold is not supported in my country (Bulgaria). What should I do in order to play online multiplayer ?
+20. @XboxSupport Are you aware of any vertical dust covers for the xbox one x? I've searched on the web but can't find any apart from a dodgy looking white one. @117331 @115786 @153293
+21. @XboxSupport is there any word on when #kotor will be available on #XboxOne in Australia? I was able to buy it on 360 but not download it
+22. @XboxSupport hi i changed my gamertag name on the xbox app and i got a confirmation email but the gamertag name has not changed
+23. @XboxSupport I've already done that as well as factory restore my Xbox when you guys suggested I go onto your live chat.
+24. @XboxSupport no I'm not an insider member
+25. @XboxSupport @15913 @116543 any idea as to why I don’t have the option to download 4K content on Xbox one x?
+26. hi, just downloaded the newest xbox one Update and now my account can‘t connect to xbox live and logs itself out all the time @XboxSupport
+27. @XboxSupport No matter how I word it, it sounds like retaliation. I’ll probably get hit with yet another ban and I’m sure this one will be more severe. Just for protecting my objective.
+28. @XboxSupport Power strip
+29. @XboxSupport Hey! Thanks for the reply. However, there seems to be no contact solutions i can go to..it says no people on Line and my only option is you
+30. @XboxSupport Yes. The actual repair supposedly happened just a few days after I sent it, it's the delivery service
+31. @XboxSupport why is there no support for someone like me who's been hacked and has lost everything ?
+32. @XboxSupport So nothing on this @XboxSupport?
+33. @XboxSupport @15913 Ok thanks. Good to hear. I'm very interested to see what these older enhanced titles are like on the X.
+34. Why does Halo Wars 2 on Windows 10 claim it is 27.3 GB in size but uses 84.6 GB on my hard drive? @204138 @XboxSupport Also why is it called Hogan Threshold? https://t.co/zXylsKqC3m
+35. @XboxSupport I will try. It is already uninstalled i will let you know
+36. @XboxSupport Looks like the issue is fixed! I was able to purchase Wolfenstein II with not further issues. Thank you.
+37. @XboxSupport I just sent u a dm with a message on it,it was too long for me to pop in a tweet so I dm it u,please could u check it out?
+38. @XboxSupport I'm having problems on trove when waiting for the loading screen "recieved user acknowledgement" to change but the comes up saying connection lost I will take picture when next happens as its started working for now
+39. @XboxSupport So I just got my #XboxDesignLab controller but I can't connect it to my Xbox One. Help!
+40. @XboxSupport can you please add ace combat 6 and hawx to the reverse compatibility list
+41. @117331 @XboxSupport Hello anybody there that can help? https://t.co/3junKeWog6
+42. @XboxSupport Is the Ark update nearly through cert? Can you provide an eta.
+43. @XboxSupport After delete and download complete new : https://t.co/Cr8IGBHKrA
+44. @XboxSupport XBOS-30100f59feae-02cc-41f3-a135-daacf6a1e667 this is the error code I get when trying to redeem an Xbox Live Gold prepaid code. Why does redeeming Gold codes always have flaws? I've never spoken to someone who's had a flawless experience with them
+45. @XboxSupport @115786 I don't have membership, but when I enter a 14 day trial code, it says I do have one, wth? https://t.co/GY0FVBnurp
+46. @XboxSupport Got this error message... https://t.co/XDe7Wsatxt
+47. @XboxSupport The main menu
+48. @XboxSupport @117331 kinda fed up of Xbox as a company now they have banned me for the 4th time now stupid and each time is 2 week bans
+49. @XboxSupport Yes I have several times even connected them to a computer and a phone then reconnected them to the Xbox they still do it
+50. @XboxSupport Hi, I don't find my pictures of FH3 in https://t.co/h0pajZxkXH, only FH2 appears
+(.venv) rahul-ringane@rahul-ringane-HP-Pavilion-Laptop-15-eg2xxx:~/Projects/Support_Agent$ ^C
+(.venv) rahul-ringane@rahul-ringane-HP-Pavilion-Laptop-15-eg2xxx:~/Projects/Support_Agent$ 
