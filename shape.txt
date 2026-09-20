@@ -299,3 +299,78 @@ error/problem          3138 (16.46%)
 50. @XboxSupport Hi, I don't find my pictures of FH3 in https://t.co/h0pajZxkXH, only FH2 appears
 (.venv) rahul-ringane@rahul-ringane-HP-Pavilion-Laptop-15-eg2xxx:~/Projects/Support_Agent$ ^C
 (.venv) rahul-ringane@rahul-ringane-HP-Pavilion-Laptop-15-eg2xxx:~/Projects/Support_Agent$ 
+
+
+
+English customer messages: 19064
+
+========== ISSUE COVERAGE ==========
+
+/home/rahul-ringane/Projects/Support_Agent/src/intent_analysis.py:59: UserWarning: This pattern is interpreted as a regular expression, and has match groups. To actually get the groups, use str.extract.
+  count = customers["text"].str.contains(
+account              1376 ( 7.22%)
+network              1402 ( 7.35%)
+game                 3025 (15.87%)
+console              6263 (32.85%)
+controller            595 ( 3.12%)
+purchase             1573 ( 8.25%)
+subscription         1287 ( 6.75%)
+download             1812 ( 9.50%)
+order                 288 ( 1.51%)
+ban                   407 ( 2.13%)
+error                3136 (16.45%)
+repair               1013 ( 5.31%)
+compatibility         103 ( 0.54%)
+
+========== COMMON WORDS ==========
+
+xboxsupport          17709
+one                  3235
+game                 2137
+https                2050
+help                 1982
+just                 1888
+when                 1829
+get                  1577
+now                  1371
+all                  1344
+any                  1344
+games                1274
+still                1261
+there                1247
+play                 1230
+update               1209
+from                 1172
+live                 1088
+account              1051
+been                 973
+will                 929
+out                  927
+new                  888
+fix                  878
+your                 875
+work                 872
+thanks               866
+got                  844
+says                 824
+tried                819
+like                 781
+they                 775
+console              771
+don                  746
+won                  746
+need                 739
+back                 726
+has                  725
+issue                716
+getting              707
+even                 699
+problem              694
+code                 690
+working              688
+time                 688
+only                 685
+controller           684
+having               673
+after                621
+app                  611
