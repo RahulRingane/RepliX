@@ -10,10 +10,21 @@ class Agent:
         self,
         provider: LLMProvider,
         model: str,
+        system_prompt: str,
+        prompt_version: str,
     ):
         self.provider = provider
         self.model = model
-        self.state = AgentState()
+        self.prompt_version = prompt_version
+
+        self.state = AgentState(
+            messages=[
+                Message(
+                    role="system",
+                    content=system_prompt,
+                )
+            ]
+        )
 
     def run(self, user_message: str) -> LLMResponse:
         self.state.messages.append(
@@ -26,6 +37,10 @@ class Agent:
         request = LLMRequest(
             model=self.model,
             messages=self.state.messages,
+            metadata={
+                "agent": "orchestrator",
+                "prompt_version": self.prompt_version,
+            },
         )
 
         response = self.provider.generate(request)

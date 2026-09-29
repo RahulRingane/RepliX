@@ -2,6 +2,7 @@ import os
 
 from dotenv import load_dotenv
 
+from src.agent.prompts import PromptRegistry
 from src.agent.agent import Agent
 from src.ai.providers.openai import OpenAIProvider
 
@@ -17,6 +18,7 @@ def main():
     agent = Agent(
         provider=provider,
         model="gpt-4o-mini",
+        prompt_name="orchestrator",
     )
 
     response = agent.run(
