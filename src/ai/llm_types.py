@@ -1,7 +1,7 @@
 from dataclasses import dataclass, field
 from typing import Any, Literal
-from .cache.types import CacheConfig
 
+from .cache.types import CacheConfig
 
 Role = Literal["system", "user", "assistant", "tool"]
 
@@ -27,6 +27,7 @@ class Usage:
     output_tokens: int = 0
     total_tokens: int = 0
 
+
 @dataclass
 class LLMRequest:
     model: str
@@ -40,6 +41,7 @@ class LLMRequest:
     cache: CacheConfig | None = None
 
     metadata: dict[str, Any] = field(default_factory=dict)
+
 
 @dataclass
 class LLMResponse:

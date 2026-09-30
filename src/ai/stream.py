@@ -1,7 +1,6 @@
 from dataclasses import dataclass
 from typing import Literal
 
-
 StreamEventType = Literal[
     "text_delta",
     "tool_call",

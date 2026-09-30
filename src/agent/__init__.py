@@ -1,7 +1,4 @@
-from src.agent.prompts import PromptRegistry
-
 class Agent:
-
     def __init__(
         self,
         provider,

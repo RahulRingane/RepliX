@@ -1,3 +1,5 @@
+from src.agent.prompts.registry import get_active_prompt
+from src.ai.config import LLMConfig
 from src.ai.llm_types import LLMRequest, LLMResponse, Message
 from src.ai.providers.base import LLMProvider
 
@@ -5,23 +7,27 @@ from .state import AgentState
 
 
 class Agent:
-
     def __init__(
         self,
         provider: LLMProvider,
-        model: str,
-        system_prompt: str,
-        prompt_version: str,
+        config: LLMConfig,
+        prompt_name: str,
     ):
         self.provider = provider
-        self.model = model
-        self.prompt_version = prompt_version
+        self.config = config
+
+        prompt = get_active_prompt(
+            prompt_name,
+            config.model,
+        )
+        self.prompt_version = prompt.version
+        self.prompt_name = prompt.name
 
         self.state = AgentState(
             messages=[
                 Message(
                     role="system",
-                    content=system_prompt,
+                    content=prompt.content,
                 )
             ]
         )
@@ -35,11 +41,16 @@ class Agent:
         )
 
         request = LLMRequest(
-            model=self.model,
+            model=self.config.model,
             messages=self.state.messages,
+            temperature=self.config.temperature,
+            max_tokens=self.config.max_tokens,
             metadata={
-                "agent": "orchestrator",
+                "agent": self.prompt_name,
+                "prompt_name": self.prompt_name,
                 "prompt_version": self.prompt_version,
+                "provider": self.config.provider,
+                "model": self.config.model,
             },
         )
 
