@@ -6,6 +6,8 @@ from src.ai.providers.base import LLMProvider
 from .state import AgentState
 
 
+# Agent class that manages the interaction with the LLM provider,
+# maintains the conversation state, and handles prompts.
 class Agent:
     def __init__(
         self,
@@ -32,6 +34,8 @@ class Agent:
             ]
         )
 
+    # Run method that takes a user message, appends it to the conversation state,
+    # generates a response from the LLM provider, and appends the response to the state.
     def run(self, user_message: str) -> LLMResponse:
         self.state.messages.append(
             Message(
