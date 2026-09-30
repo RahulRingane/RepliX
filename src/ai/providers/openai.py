@@ -1,10 +1,10 @@
 from openai import OpenAI
+
 from ..llm_types import LLMRequest, LLMResponse, Usage
 from .base import LLMProvider
 
 
 class OpenAIProvider(LLMProvider):
-
     def __init__(self, api_key: str):
         self.client = OpenAI(api_key=api_key)
 
@@ -20,6 +20,8 @@ class OpenAIProvider(LLMProvider):
         response = self.client.responses.create(
             model=request.model,
             input=messages,
+            temperature=request.temperature,
+            max_output_tokens=request.max_tokens,
         )
 
         usage = None
