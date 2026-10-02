@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 
 
+# Data class representing an AI model configuration
 @dataclass(frozen=True)
 class LLMConfig:
     provider: str
