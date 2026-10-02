@@ -6,6 +6,7 @@ from .cache.types import CacheConfig
 Role = Literal["system", "user", "assistant", "tool"]
 
 
+# Data class representing a message in a conversation
 @dataclass
 class Message:
     role: Role
@@ -14,6 +15,7 @@ class Message:
     tool_call_id: str | None = None
 
 
+# Data class representing a tool call made by the AI model
 @dataclass
 class ToolCall:
     id: str
@@ -21,6 +23,7 @@ class ToolCall:
     arguments: dict[str, Any]
 
 
+# Data class representing usage statistics for an AI model
 @dataclass
 class Usage:
     input_tokens: int = 0
@@ -28,6 +31,7 @@ class Usage:
     total_tokens: int = 0
 
 
+# Data class representing a request to an AI model
 @dataclass
 class LLMRequest:
     model: str
@@ -43,6 +47,7 @@ class LLMRequest:
     metadata: dict[str, Any] = field(default_factory=dict)
 
 
+# Data class representing a response from an AI model
 @dataclass
 class LLMResponse:
     content: str

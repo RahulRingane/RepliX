@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Literal
 
+# Data class representing a stream event type
 StreamEventType = Literal[
     "text_delta",
     "tool_call",
@@ -8,6 +9,7 @@ StreamEventType = Literal[
 ]
 
 
+# Data class representing a stream event
 @dataclass
 class StreamEvent:
     type: StreamEventType
