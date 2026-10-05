@@ -3,6 +3,7 @@ import pytest
 from src.ai.config import LLMConfig
 
 
+# Valid configuration
 def test_llm_config_valid():
     config = LLMConfig(
         provider="openai",
@@ -16,6 +17,8 @@ def test_llm_config_valid():
     assert config.temperature == 0.0
     assert config.max_tokens == 256
 
+    # Provider validation
+
 
 def test_llm_config_rejects_empty_provider():
     with pytest.raises(ValueError, match="Provider cannot be empty"):
@@ -23,6 +26,8 @@ def test_llm_config_rejects_empty_provider():
             provider="",
             model="gpt-4o-mini",
         )
+
+        # Model validation
 
 
 def test_llm_config_rejects_empty_model():
@@ -32,6 +37,8 @@ def test_llm_config_rejects_empty_model():
             model="",
         )
 
+        # Temperature validation
+
 
 def test_llm_config_rejects_negative_temperature():
     with pytest.raises(ValueError, match="Temperature cannot be negative"):
@@ -40,6 +47,8 @@ def test_llm_config_rejects_negative_temperature():
             model="gpt-4o-mini",
             temperature=-1,
         )
+
+        # Token limit validation
 
 
 def test_llm_config_rejects_invalid_max_tokens():
